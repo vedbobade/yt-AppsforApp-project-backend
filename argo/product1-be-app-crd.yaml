@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/vedbobade/yt-AppsforApp-project-backend.git
     targetRevision: HEAD
-    path: .
+    path: manifest-be
 
   destination:
     server: https://kubernetes.default.svc
