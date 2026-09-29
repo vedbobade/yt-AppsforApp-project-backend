@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: yt-project-be
+  namespace: argocd
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/vedbobade/yt-AppsforApp-project-backend.git
+    targetRevision: HEAD
+    path: yt-project-backend
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: yt-project-appsforapp-ns
+  
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  
+    syncOptions:
+      - CreateNamespace=true
+      - PruneLast=true
+      - ApplyOutOfSync=true
+
+
+
+      
